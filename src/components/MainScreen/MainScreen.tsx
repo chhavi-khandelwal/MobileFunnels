@@ -74,7 +74,7 @@ const MainScreen: React.FC = () => {
 
 	return (
 		<div className='h-screen flex flex-col items-center justify-center'>
-			<div className='flex gap-2 items-center justify-center'>
+			<div className='flex gap-2 items-center justify-center mt-2'>
 				<FileUploadButton
 					onChange={handleFileChange}
 					onClick={handleClick}

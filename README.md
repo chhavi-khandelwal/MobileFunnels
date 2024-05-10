@@ -32,11 +32,12 @@ This project implements a funnel app using ReactJS, TypeScript, and Tailwind CSS
 							Accordion    
 
 # Architecture
- - components: All the folders of react components used in the app. Each folder contains a tsx file for rendering + test files for testing the functionality
- - Testing: Unit tests for MainScreen added
+ - components: All the folders of react components used in the app. Each folder contains a tsx file for rendering + test files for testing the functionality.
+ - Testing: Unit tests for MainScreen added.
 
 # Features
  - Users can upload JSON files containing funnel data.
+ - Current Resolution supported: 365 X 600.
  - Funnel data is dynamically displayed using carousels. Each Funnel block takes the whole mobile screen viewport.
  - For ease in scrolling, arrow buttons are added in top, left, right and bottom. Normal scrolling works as well.
  - To transition between different funnel pages, arrow buttons are added at the left and right.
