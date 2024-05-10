@@ -36,7 +36,7 @@ const FunnelPreview = ({
 	const carouseItems = useMemo(() => getCarouselItems(), [funnels]);
 
 	return (
-		<div className='mobile-container border-4 border-slate-800 rounded-lg shadow-lg relative mt-4'>
+		<div className='mobile-container border-4 border-slate-800 rounded-3xl shadow-lg relative mt-4'>
 			<div style={Resolution}>
 				{carouseItems?.length && <Carousel items={carouseItems} />}
 
