@@ -14,22 +14,22 @@ This project implements a funnel app using ReactJS, TypeScript, and Tailwind CSS
 # Directory Structure of components/containers
  - The code is structured into functional components and hooks for better readability and maintainability.
 
-						              App
-						               |
+								       App
+									|
 								(components + styles)
 								Main screen + test file
-										|       |
+							             |   	    |
 								FunnelPreview  FileUploadButton	
-									| 
-								Carousel
-									|
-								Page 
-									|
-					____________Blocks(folder)______                                
-					|		 |		    |           |
-				Textual     List   	  Button       Image
+								     | 
+								  Carousel
+								     |
+								    Page 
+			                                             |
+							____________Blocks(folder)_______________                               
+							|		 |          |           |
+							Textual     	List   	  Button       Image
 							|		  
-						Accordion    
+							Accordion    
 
 # Architecture
  - components: All the folders of react components used in the app. Each folder contains a tsx file for rendering + test files for testing the functionality
