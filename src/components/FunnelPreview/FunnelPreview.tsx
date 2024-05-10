@@ -41,7 +41,7 @@ const FunnelPreview = ({
 				{carouseItems?.length && <Carousel items={carouseItems} />}
 
 				{funnelMessage && (
-					<div className='w-full h-full flex items-center justify-center font-bold text-slate-700 bg-red-50'>
+					<div className='w-full h-full flex items-center justify-center font-bold text-slate-700 bg-slate-50'>
 						{funnelMessage}
 					</div>
 				)}

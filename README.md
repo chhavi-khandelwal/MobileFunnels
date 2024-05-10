@@ -16,19 +16,20 @@ This project implements a funnel app using ReactJS, TypeScript, and Tailwind CSS
 
 						              App
 						               |
-							Main screen + test file
-		                        	|       |
-							FunnelPreview  FileUploadButton	
-		   	                    | 
-							Carousel
-				                |
-							   Page 
-								|
-				____________Blocks(folder)______                                
-				|		 |		    |           |
-			Textual     List   	  Button       Image
-						 |		  
-					 Accordion    
+								(components + styles)
+								Main screen + test file
+										|       |
+								FunnelPreview  FileUploadButton	
+									| 
+								Carousel
+									|
+								Page 
+									|
+					____________Blocks(folder)______                                
+					|		 |		    |           |
+				Textual     List   	  Button       Image
+							|		  
+						Accordion    
 
 # Architecture
  - components: All the folders of react components used in the app. Each folder contains a tsx file for rendering + test files for testing the functionality
