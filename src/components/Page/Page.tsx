@@ -17,6 +17,12 @@ interface PageProps {
 	blocks: PageBlockProps[];
 }
 
+interface ChevroIconProps {
+	onClick: () => void;
+	ariaLabel: string;
+	facingUp?: boolean;
+}
+
 const PageContent = ({ block }: { block: PageBlockProps }) => {
 	let content = null;
 
@@ -60,8 +66,30 @@ const PageContent = ({ block }: { block: PageBlockProps }) => {
 	return content;
 };
 
+const ChevronIcon = ({ onClick, ariaLabel, facingUp }: ChevroIconProps) => {
+	return (
+		<button
+			className={`absolute ${
+				facingUp ? ' rotate-180 top-1 ' : ' bottom-1'
+			} flex items-center justify-center text-gray-400 h-8 w-8 rounded-full z-10`}
+			onClick={onClick}
+			aria-label={ariaLabel}
+			style={{ left: 'calc(50% - 16px)' }}
+		>
+			<ChevronDoubleDownIcon />
+		</button>
+	);
+};
+
 const Page = ({ blocks, index }: PageProps) => {
 	const allBlocks = blocks.map(() => useRef<HTMLDivElement>(null));
+
+	const scrollIntoViewOnChevronClick = (index: number) => {
+		allBlocks[index].current?.scrollIntoView({
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<div
 			className='overflow-auto w-full h-full'
@@ -77,33 +105,22 @@ const Page = ({ blocks, index }: PageProps) => {
 						ref={allBlocks[index]}
 					>
 						{index > 0 && (
-							<button
-								className='absolute rotate-180 top-1 flex items-center justify-center bg-gray-400 hover:bg-gray-500 bg-opacity-50 text-white h-8 w-8 rounded-full z-10'
+							<ChevronIcon
 								onClick={() => {
-									allBlocks[index - 1].current?.scrollIntoView({
-										behavior: 'smooth',
-									});
+									scrollIntoViewOnChevronClick(index - 1);
 								}}
-								aria-label='Previous slide'
-								style={{ left: 'calc(50% - 16px)' }}
-							>
-								<ChevronDoubleDownIcon />
-							</button>
+								ariaLabel='Previous page'
+								facingUp
+							/>
 						)}
 						<PageContent block={block} />
 						{index < blocks.length - 1 && (
-							<button
-								className='absolute bottom-1 flex items-center justify-center bg-gray-400 bg-opacity-50 hover:bg-gray-500 text-white h-8 w-8 rounded-full z-10'
+							<ChevronIcon
 								onClick={() => {
-									allBlocks[index + 1].current?.scrollIntoView({
-										behavior: 'smooth',
-									});
+									scrollIntoViewOnChevronClick(index + 1);
 								}}
-								aria-label='Previous slide'
-								style={{ left: 'calc(50% - 16px)' }}
-							>
-								<ChevronDoubleDownIcon />
-							</button>
+								ariaLabel='Next page'
+							/>
 						)}
 					</div>
 				);
